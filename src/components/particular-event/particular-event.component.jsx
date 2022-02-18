@@ -4,7 +4,7 @@ import './particular-event.styles.scss';
 
 import { default as toDot } from '../../assets/images/Events/to-dot.svg';
 import { default as dateLine } from '../../assets/images/Events/date-line.svg';
-import { default as door } from '../../assets/images/Events/door.svg';
+import { default as door } from '../../assets/images/Events/door.png';
 import { default as midButtonLine } from '../../assets/images/Events/mid-button-line.svg';
 
 export const ParticularEvent = ({ title, start_time, prize, end_time, description, team_size, convenor, co_convenor1, co_convenor2, mem1, mem2 }) => {

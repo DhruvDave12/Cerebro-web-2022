@@ -1,10 +1,8 @@
 import React from "react";
 
-import { default as sphere } from '../../assets/images/Events/sphere.svg';
-import { default as line } from '../../assets/images/Events/line.svg';
-import { default as selectedDot } from '../../assets/images/Events/selected-dot.svg';
-import { default as button } from '../../assets/images/Events/button.svg';
+import { default as button } from '../../assets/images/Events/button.png';
 
+import { EventScrollItem } from "../EventScrollItem/event-scroll-item.component";
 import './event-scroll.styles.scss';
 
 const EventScrollBar = ({ visible, loadless6, loadMore6, currIdx, events, loadPage }) => {
@@ -16,12 +14,14 @@ const EventScrollBar = ({ visible, loadless6, loadMore6, currIdx, events, loadPa
             </div>
 
 
+            <div className="scroll-bar">
+                {
+                    events.slice(visible, visible+7).map((event,idx) => (
+                        <EventScrollItem event = {event} idx = {idx} currIdx = {currIdx} visible={visible} loadPage={loadPage} />
+                    ))
+                }
+            </div>
             
-
-
-
-
-
             <div className="button-cover2">
                 <img onClick={loadMore6} src={button} alt="nav-button-right" className={visible === 15 ? "button2 disable" : "button2"} />
             </div>
